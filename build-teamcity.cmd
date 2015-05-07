@@ -1,3 +1,3 @@
 npm install &&^
 bower install &&^
-grunt
+grunt --teamcity=true
