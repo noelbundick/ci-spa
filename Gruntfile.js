@@ -20,6 +20,8 @@ module.exports = function (grunt) {
     app: require('./bower.json').appPath || 'app',
     dist: 'dist'
   };
+  
+  var karmaReporter = grunt.option('teamcity') ? 'teamcity' : 'dots';
 
   // Define the configuration for all the tasks
   grunt.initConfig({
@@ -384,7 +386,8 @@ module.exports = function (grunt) {
     karma: {
       unit: {
         configFile: 'test/karma.conf.js',
-        singleRun: true
+        singleRun: true,
+        reporters: karmaReporter
       }
     }
   });
