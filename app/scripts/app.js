@@ -10,7 +10,8 @@
  */
 angular
   .module('ciSpaApp', [
-    'ngRoute'
+    'ngRoute',
+    'SignalR'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -25,4 +26,5 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  });
+  })
+  .constant('AppBaseUrl', 'http://ci-spa.azurewebsites.net');
